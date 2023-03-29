@@ -1,0 +1,6 @@
+classe da origem a objetos (toda classe tem q começar com letra maiuscula);
+um objeto tem caracteristicas e açoes;
+variaves de instacia sao "private";
+metodos sao as açoes;
+new vc esta intasiando "chamando";
+

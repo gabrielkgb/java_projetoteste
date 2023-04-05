@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Service.LoginService;
+import modelo.Usuario;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -26,13 +27,15 @@ public class LoginServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	  String email =  request.getParameter("email");
-	  String senha =  request.getParameter("senha");
+	  Usuario usuario = new Usuario();
+		
+	 usuario.setUsuario(request.getParameter("email"));
+	 usuario.setSenha(request.getParameter("senha"));
 	
 	  LoginService servico = new LoginService();
 	  
 	  
-	  if(servico.VerificarUsuario(email, senha)) {
+	  if(servico.verificarUsuario(usuario)) {
 		  response.sendRedirect("home.jsp");
 	  }else {
 		  response.sendRedirect("index.jsp");

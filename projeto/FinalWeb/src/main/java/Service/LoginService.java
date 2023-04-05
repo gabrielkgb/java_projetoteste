@@ -1,11 +1,18 @@
 package Service;
 
+import dao.UsuarioDAO;
+import modelo.Usuario;
+
 public class LoginService {
- public boolean VerificarUsuario(String email, String senha) {
- if(email.equals("admin@gmail.com") && senha.equals("12345")) {
-	    return true;
-     }else {
-	    return false;
-     }
-  }
+	public boolean verificarUsuario(Usuario usuario) {
+		UsuarioDAO dao= new UsuarioDAO();
+		
+		Usuario u = dao.validarlogin(usuario);
+		
+		if(u.getNome() != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

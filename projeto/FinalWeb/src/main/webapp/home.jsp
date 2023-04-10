@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="modelo.Usuario"%>
+<%@page import="java.util.List"%>
 <html lang="pt-br">
 
 <head>
@@ -20,7 +22,7 @@
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="home.html" class="nav-link" style="color: #03A0C6;">Início</a>
+                    <li class="nav-item"><a href="home.html" class="nav-link" style="color: #03A0C6;">Inicio</a>
                     </li>
                     <li class="nav-item"><a href="servicos.html" class="nav-link" style="color: #03A0C6;">Serviços</a>
                     </li>
@@ -33,47 +35,37 @@
        <button style="color:blue">sair</button>
        </form>
 
-            <!--<div class="imputbox">
-                <input type="text" style="left: 130px;position: absolute;" id="email" required="required">
-                <span style="color: #03A0C6;left: 130px;position: absolute;">email</span>
-            </div>
-
-            <div class="imputbox">
-                <input type="password" name="senha" id="senha" required="required">
-                <span style="color: #03A0C6;">senha</span>
-            </div>
-
-
-           <!-- write by fellipe garcia <div>
-                <button class="cadastro"><a href="home.jsp">Entrar</a></button>
-                
-                <button class="cadastro"><a href="index.jsp">Cadastrar -></a></button>
-
-
-            </div>-->
-
 </nav>
     </header>
 
 
     <main class="container">
-
-        <h1>Filmes disponiveis</h1>
-
-        <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left"></i>
-            <div class="carousel">
-                <a href="telinhac.html" target="_blank"><img src="img/img-1.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-2.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-3.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-4.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-5.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-6.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-7.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-8.jpg" alt="img" ></a>
-                <a href="telinhac.html" target="_blank"><img src="img/img-9.jpg" alt="img" ></a>
-            </div>
-            <i id="right" class="fa-solid fa-angle-right"></i>
+     
+             <%
+       List<Usuario> lista = (List<Usuario>)session.getAttribute("lista");
+       %>
+       
+       <div class="tabela">
+    
+       
+       <table border="1">
+       <tr>
+       <td>usuario</td>
+        <td>nome</td>
+        <td>email</td>
+       </tr>
+       
+        <%
+       for(Usuario usuario:lista){
+    	   out.write("<tr>");
+    	   out.write("<td>" + usuario.getUsuario() + "</td>");
+    	   out.write("<td>" + usuario.getNome() + "</td>");
+    	   out.write("<td>" + usuario.getEmail() + "</td>");
+       }
+       %>
+       
+       </table>
+       
         </div>
 
 

@@ -17,7 +17,7 @@
       </div>
       <div class="nav-list">
         <ul>
-          <li class="nav-item"><a href="home.html" class="nav-link" style="color: #03A0C6;">InÃ­cio</a></li>
+          <li class="nav-item"><a href="home.jsp" class="nav-link" style="color: #03A0C6;">Inicio</a></li>
           <li class="nav-item"><a href="servicos.html" class="nav-link" style="color: #03A0C6;">Serviços</a>
           </li>
           <li class="nav-item"><a href="contato.html" class="nav-link" style="color: #03A0C6;">Contato</a>
